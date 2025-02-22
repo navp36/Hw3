@@ -65,13 +65,10 @@ def length_of_longest_substring_n(s):
     for end_val in range(len(s)):
         char_index = ord(s[end_val])
         freq_list[char_index] += 1
-
         while freq_list[char_index] > 1:
             beg_char_index = ord(s[beg])
             freq_list[beg_char_index] -= 1
             beg += 1
-
         current_length = end_val - beg + 1
         max_length = max(max_length, current_length)
     return max_length
-
